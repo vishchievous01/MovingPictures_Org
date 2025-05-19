@@ -51,7 +51,7 @@
                     <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
         	</div>
-           
+
             <div class="row">
             	<label for="password">
                     Password:
@@ -92,7 +92,7 @@
                     <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
                 </label>
             </div>
-           
+
             <div class="row">
                 <label for="email-2">
                     your email:
@@ -141,77 +141,77 @@
 						<li class="hidden">
 							<a href="#page-top"></a>
 						</li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
-							Home <i class="fa fa-angle-down" aria-hidden="true"></i>
+						<li>
+							<a href="{% url 'index' %}" class="btn btn-default">
+							Home <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="index-2.html">Home 01</a></li>
-								<li><a href="homev2.html">Home 02</a></li>
-								<li><a href="homev3.html">Home 03</a></li>
-							</ul>
+<!--							<ul class="dropdown-menu level1">-->
+<!--&lt;!&ndash;								<li><a >Home</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;								<li><a href="homev2.html">Home 02</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;								<li><a href="homev3.html">Home 03</a></li>&ndash;&gt;-->
+<!--							</ul>-->
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							movies<i class="fa fa-angle-down" aria-hidden="true"></i>
+							<a href="{% url 'movieGrid' %}" class="btn btn-default">
+							Movies <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Movie grid<i class="ion-ios-arrow-forward"></i></a>
-									<ul class="dropdown-menu level2">
-										<li><a href="moviegrid.html">Movie grid</a></li>
-										<li><a href="moviegridfw.html">movie grid full width</a></li>
-									</ul>
-								</li>			
-								<li><a href="movielist.html">Movie list</a></li>
-								<li><a href="moviesingle.html">Movie single</a></li>
-								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
-							</ul>
+<!--							<ul class="dropdown-menu level1">-->
+<!--								<li class="dropdown">-->
+<!--									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Movie grid<i class="ion-ios-arrow-forward"></i></a>-->
+<!--									<ul class="dropdown-menu level2">-->
+<!--										<li><a href="moviegrid.html">Movie grid</a></li>-->
+<!--										<li><a href="moviegridfw.html">movie grid full width</a></li>-->
+<!--									</ul>-->
+<!--								</li>			-->
+<!--								<li><a href="movielist.html">Movie list</a></li>-->
+<!--								<li><a href="moviesingle.html">Movie single</a></li>-->
+<!--								<li class="it-last"><a href="seriessingle.html">Series single</a></li>-->
+<!--							</ul>-->
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
+							<a class="btn btn-default">
+							Celebrities <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="celebritygrid01.html">celebrity grid 01</a></li>
-								<li><a href="celebritygrid02.html">celebrity grid 02 </a></li>
-								<li><a href="celebritylist.html">celebrity list</a></li>
-								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>
-							</ul>
+<!--							<ul class="dropdown-menu level1">-->
+<!--								<li><a href="celebritygrid01.html">celebrity grid 01</a></li>-->
+<!--								<li><a href="celebritygrid02.html">celebrity grid 02 </a></li>-->
+<!--								<li><a href="celebritylist.html">celebrity list</a></li>-->
+<!--								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>-->
+<!--							</ul>-->
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							news <i class="fa fa-angle-down" aria-hidden="true"></i>
+							<a class="btn btn-default">
+							news <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="bloglist.html">blog List</a></li>
-								<li><a href="bloggrid.html">blog Grid</a></li>
-								<li class="it-last"><a href="blogdetail.html">blog Detail</a></li>
-							</ul>
+<!--							<ul class="dropdown-menu level1">-->
+<!--								<li><a href="bloglist.html">blog List</a></li>-->
+<!--								<li><a href="bloggrid.html">blog Grid</a></li>-->
+<!--								<li class="it-last"><a href="blogdetail.html">blog Detail</a></li>-->
+<!--							</ul>-->
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							community <i class="fa fa-angle-down" aria-hidden="true"></i>
+							<a class="btn btn-default">
+							community <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="userfavoritegrid.html">user favorite grid</a></li>
-								<li><a href="userfavoritelist.html">user favorite list</a></li>
-								<li><a href="userprofile.html">user profile</a></li>
-								<li class="it-last"><a href="userrate.html">user rate</a></li>
-							</ul>
+<!--							<ul class="dropdown-menu level1">-->
+<!--								<li><a href="userfavoritegrid.html">user favorite grid</a></li>-->
+<!--								<li><a href="userfavoritelist.html">user favorite list</a></li>-->
+<!--								<li><a href="userprofile.html">user profile</a></li>-->
+<!--								<li class="it-last"><a href="userrate.html">user rate</a></li>-->
+<!--							</ul>-->
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
+							<a class="btn btn-default">
+							pages <i class="#" aria-hidden="true"></i>
 							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="landing.html">Landing</a></li>
-								<li><a href="404.html">404 Page</a></li>
-								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
-							</ul>
-						</li>                
+<!--							<ul class="dropdown-menu level1">-->
+<!--								<li><a href="landing.html">Landing</a></li>-->
+<!--								<li><a href="404.html">404 Page</a></li>-->
+<!--								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>-->
+<!--							</ul>-->
+						</li>
 						<li><a href="#">Help</a></li>
 						<li class="loginLink"><a href="#">LOG In</a></li>
 						<li class="btn signupLink"><a href="#">sign up</a></li>
@@ -219,12 +219,12 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-	    
+
 	    <!-- top search form -->
 	    <div class="top-search">
 	    	<select>
+				<option value="united">Movies</option>
 				<option value="united">TV show</option>
-				<option value="saab">Others</option>
 			</select>
 			<input type="text" placeholder="Search for a movie, TV Show or celebrity that you are looking for">
 			<button class="search-btn" type="submit"></button>
@@ -369,7 +369,7 @@
 						<li class="active"><a href="#tab1">#Popular</a></li>
 						<li><a href="#tab2"> #Coming soon</a></li>
 						<li><a href="#tab3">  #Top rated  </a></li>
-						<li><a href="#tab4"> #Most reviewed</a></li>                        
+						<li><a href="#tab4"> #Most reviewed</a></li>
 					</ul>
 				    <div class="tab-content">
 				        <div id="tab1" class="tab active">
@@ -379,7 +379,7 @@
 				            			<div class="movie-item">
 					            			<div class="mv-img">
 					            				<img src="{% static 'assets/images/uploads/mv-item1.jpg' %}" alt="" width="185" height="284">
-					            			</div> 
+					            			</div>
 					            			<div class="hvr-inner">
 					            				<a  href="moviesingle.html"> Read more <i class="ion-android-arrow-dropright"></i> </a>
 					            			</div>
@@ -743,7 +743,7 @@
 						<li><a href="#tab21">#Popular</a></li>
 						<li class="active"><a href="#tab22"> #Coming soon</a></li>
 						<li><a href="#tab23">  #Top rated  </a></li>
-						<li><a href="#tab24"> #Most reviewed</a></li>                        
+						<li><a href="#tab24"> #Most reviewed</a></li>
 					</ul>
 				    <div class="tab-content">
 				        <div id="tab21" class="tab">
@@ -1250,8 +1250,8 @@
 					    <div>
 					    	<iframe class="item-video" src="https://www.youtube.com/embed/NxhEZG0k9_w"></iframe>
 					    </div>
-						
-						
+
+
 					</div>
 					<div class="slider-nav-2 thumb-ft">
 						<div class="item">
@@ -1286,7 +1286,7 @@
 								<img src="{% static 'assets/images/uploads/trailer3.png' %}" alt="photo by Alexander Dimitrov" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>	
+	                        	<h4 class="desc">Logan: Director James Mangold Interview</h4>
 	                        	<p>2:43</p>
 	                        </div>
 						</div>
@@ -1295,22 +1295,22 @@
 								<img src="{% static 'assets/images/uploads/trailer4.png' %}"  alt="photo by Wojciech Szaturski" width="100" height="56">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>	
+	                        	<h4 class="desc">Beauty and the Beast: Official Teaser Trailer 2</h4>
 	                        	<p>2: 32</p>
-	                        </div>	
+	                        </div>
 						</div>
 						<div class="item">
 							<div class="trailer-img">
 								<img src="{% static 'assets/images/uploads/trailer5.jpg' %}"  alt="photo by Wojciech Szaturski" width="360" height="189">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">Fast&Furious 8</h4>	
+	                        	<h4 class="desc">Fast&Furious 8</h4>
 	                        	<p>3:11</p>
-	                        </div>	
+	                        </div>
 						</div>
-					
+
 					</div>
-				</div>   
+				</div>
 			</div>
 		</div>
 	</div>
@@ -1329,8 +1329,8 @@
 				<div class="tabs">
 					<ul class="tab-links-3">
 						<li class="active"><a href="#tab31">#Movies </a></li>
-						<li><a href="#tab32"> #TV Shows </a></li>              
-						<li><a href="#tab33">  # Celebs</a></li>                       
+						<li><a href="#tab32"> #TV Shows </a></li>
+						<li><a href="#tab33">  # Celebs</a></li>
 					</ul>
 				    <div class="tab-content">
 				        <div id="tab31" class="tab active">
@@ -1384,7 +1384,7 @@
 							</div>
 							<div class="more-it">
 								<h6><a href="#">French cannibal horror “Raw” inspires L.A. theater to hand out “Barf Bags”</a></h6>
-								
+
 								<span class="time">13 hours ago</span>
 							</div>
 						</div>
@@ -1414,7 +1414,7 @@
 							</div>
 							<div class="tweet item" id=""><!-- Put your 2nd twiter account id here -->
 							</div>
-						</div>					
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1435,7 +1435,7 @@
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<li><a href="#">About</a></li> 
+					<li><a href="#">About</a></li>
 					<li><a href="#">Blockbuster</a></li>
 					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Forums</a></li>
@@ -1446,16 +1446,16 @@
 			<div class="flex-child-ft item3">
 				<h4>Legal</h4>
 				<ul>
-					<li><a href="#">Terms of Use</a></li> 
-					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
 					<li><a href="#">Security</a></li>
 				</ul>
 			</div>
 			<div class="flex-child-ft item4">
 				<h4>Account</h4>
 				<ul>
-					<li><a href="#">My Account</a></li> 
-					<li><a href="#">Watchlist</a></li>	
+					<li><a href="#">My Account</a></li>
+					<li><a href="#">Watchlist</a></li>
 					<li><a href="#">Collections</a></li>
 					<li><a href="#">User Guide</a></li>
 				</ul>

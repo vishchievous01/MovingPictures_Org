@@ -7914,6 +7914,7 @@ header .navbar-default .navbar-nav .dropdown.first.open a {
   background: none;
 }
 header .top-search {
+  gap: 0;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
@@ -7948,6 +7949,16 @@ header .top-search select {
 }
 header .top-search input::-webkit-input-placeholder {
   color: #abb7c4;
+}
+
+header .top-search button {
+  height: 46px;
+  width: 46px;
+  border: none;
+  background: url('../images/uploads/topsearch.png') no-repeat center center;
+  background-color: #233a50;
+  background-size: 20px 20px;
+  cursor: pointer;
 }
 header .top-search input {
 }

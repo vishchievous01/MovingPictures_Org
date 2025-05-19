@@ -3,9 +3,10 @@ from moving_pictures_org.urls import views
 
 urlpatterns = [
     path('index/', views.index, name="index"),
+    path('login_view/', views.login_view, name='login_view'),
+    path('signup_view/', views.signup_view, name="signup_view"),
     path('welcome/', views.welcome, name="welcome"),
     path('errorPage/', views.errorPage, name="errorPage"),
-    path('blogDetail/', views.blogDetail, name="blogDetail"),
     path('blogGrid/', views.blogGrid, name="blogGrid"),
     path('blogList.', views.blogList, name="blogList"),
     path('celebrityGrid01/', views.celebrityGrid01, name="celebrityGrid01"),

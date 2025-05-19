@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 
 def index(request):
@@ -9,20 +11,51 @@ def index(request):
     return render(request, "index.html")
 
 
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user:
+            login(request, user)
+            return redirect('/')
+        else:
+            messages.error(request, 'Invalid credentials')
+    return render(request, 'login.html')
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+        email = request.POST.get('email')
+
+        if password != password2:
+            messages.error(request, 'Passwords do not match')
+            return redirect('signup')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists')
+            return redirect('signup')
+
+        user = User.objects.create_user(username=username, password=password, email=email)
+        login(request, user)
+        return redirect('/')
+
+    return render(request, 'signup.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
 def index2(request):
     return render(request, "index-2.html")
 
 
-def welcome(request):
-    return render(request, "landing.html")
-
-
-def errorPage(request):
-    return render(request, "404.html")
-
-
-def blogDetail(request):
-    theme = request.GET.get('theme', 'dark')
+def welcome(request, theme=None):
     if theme == 'light':
         return render(request, "blogdetail_light.html")
     return render(request, "blogdetail.html")
@@ -142,3 +175,6 @@ def userRate(request):
     if theme == 'light':
         return render(request, "userrate_light.html")
     return render(request, "userrate.html")
+
+def errorPage(request):
+    return render(request, '404.html')
