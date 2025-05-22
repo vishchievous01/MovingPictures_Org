@@ -1,10 +1,8 @@
 from django.urls import path
-from moving_pictures_org.urls import views
+from moving_pictures_org_App import views
 
 urlpatterns = [
-    path('index/', views.index, name="index"),
-    path('login_view/', views.login_view, name='login_view'),
-    path('signup_view/', views.signup_view, name="signup_view"),
+    path('', views.index, name="index"),
     path('welcome/', views.welcome, name="welcome"),
     path('errorPage/', views.errorPage, name="errorPage"),
     path('blogGrid/', views.blogGrid, name="blogGrid"),

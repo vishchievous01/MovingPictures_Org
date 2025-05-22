@@ -1,6 +1,10 @@
-from django import forms
-from django.contrib.auth.forms import AuthenticationForm
+from django.db import models
 
-class CustomLoginView(AuthenticationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Username'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
+
+class RegisterDB(models.Model):
+    Username = models.CharField(max_length=100, null=True, blank=True)
+    Email = models.EmailField(max_length=150, null=True, blank=True)
+    Password = models.CharField(max_length=150, null=True, blank=True)
+
+
+
