@@ -16,14 +16,27 @@ def save_user(request):
         un = request.POST.get('username')
         em = request.POST.get('email')
         pass1 = request.method.get('pass1')
-        object = RegisterDB(Username=un, Email=em, Password=pass1)
-        if RegisterDB.objects.filter(Username=un).exists():
+        obj = RegisterDB(Username=un, Email=em, Password=pass1)
+        if RegisterDB.obj.filter(Username=un).exists():
             messages.warning(request, "Username exists!")
         else:
             object.save()
             messages.success(request, "Profile Created")
         return redirect(login_view)
-    return None
+
+
+def User_login(request):
+    if request.method == 'POST':
+        un = request.POST.get('username')
+        pswd = request.POST.get('password')
+        if RegisterDB.objects.filter(Username=un, Password=pswd).exists():
+            request.session['Username'] = un
+            request.session['Password'] = pswd
+            messages.success(request, "Login Successful")
+            return redirect(index)
+        else:
+            messages.error(request, "check your credentials")
+            return redirect(request, 'index.html', {'show_signup_popup': True})
 
 
 def welcome(request, theme=None):

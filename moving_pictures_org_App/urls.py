@@ -3,6 +3,8 @@ from moving_pictures_org_App import views
 
 urlpatterns = [
     path('', views.index, name="index"),
+    path('User_login/', views.User_login, name="User_login"),
+    path('save_user/', views.save_user, name="save_user"),
     path('welcome/', views.welcome, name="welcome"),
     path('errorPage/', views.errorPage, name="errorPage"),
     path('blogGrid/', views.blogGrid, name="blogGrid"),
