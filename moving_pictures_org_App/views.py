@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from .models import RegisterDB
 
 from moving_pictures_org_App.models import RegisterDB
 
@@ -15,28 +16,30 @@ def save_user(request):
     if request.method == 'POST':
         un = request.POST.get('username')
         em = request.POST.get('email')
-        pass1 = request.method.get('pass1')
-        obj = RegisterDB(Username=un, Email=em, Password=pass1)
-        if RegisterDB.obj.filter(Username=un).exists():
-            messages.warning(request, "Username exists!")
+        pass1 = request.POST.get('password')  # match input name in form
+
+        if RegisterDB.objects.filter(Username=un).exists():
+            messages.warning(request, "Username already exists!")
         else:
-            object.save()
+            obj = RegisterDB(Username=un, Email=em, Password=pass1)
+            obj.save()
             messages.success(request, "Profile Created")
-        return redirect(login_view)
+        return redirect('index')
 
 
 def User_login(request):
     if request.method == 'POST':
         un = request.POST.get('username')
         pswd = request.POST.get('password')
+
         if RegisterDB.objects.filter(Username=un, Password=pswd).exists():
             request.session['Username'] = un
             request.session['Password'] = pswd
             messages.success(request, "Login Successful")
-            return redirect(index)
+            return redirect('index')
         else:
-            messages.error(request, "check your credentials")
-            return redirect(request, 'index.html', {'show_signup_popup': True})
+            messages.error(request, "Check your credentials")
+            return render(request, 'index.html', {'show_login_popup': True})
 
 
 def welcome(request, theme=None):

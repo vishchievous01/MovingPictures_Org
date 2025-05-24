@@ -11,7 +11,7 @@
 
 <head>
     <!-- Basic need -->
-    <title>Open Pediatrics</title>
+    <title>Home | Moving Pictures</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -40,16 +40,18 @@
 </div>
 <!--end of preloading-->
 <!--login form popup-->
-<div class="login-wrapper" id="login-content">
+<!-- login form popup -->
+<div class="login-wrapper" id="login-content" style="display:none;">
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>Login</h3>
         <form method="post" action="{% url 'User_login' %}" enctype="multipart/form-data">
-			{% csrf_token %}
+            {% csrf_token %}
             <div class="row">
                 <label for="username">
                     Username:
-                    <input type="text" name="username" id="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$"
+                    <input type="text" name="username" id="username"
+                           pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$"
                            required="required"/>
                 </label>
             </div>
@@ -62,75 +64,81 @@
                            required="required"/>
                 </label>
             </div>
+
             <div class="row">
                 <div class="remember">
                     <div>
                         <input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
                     </div>
-                    <a href="#">Forget password ?</a>
+                    <a href="#">Forget password?</a>
                 </div>
             </div>
+
             <div class="row">
                 <button type="submit">Login</button>
             </div>
         </form>
+
         <div class="row">
             <p>Or via social</p>
             <div class="social-btn-2">
                 <a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
-                <a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
+                <a class="tw" href="#"><i class="ion-social-twitter"></i>Twitter</a>
             </div>
         </div>
     </div>
 </div>
 <!--end of login form popup-->
 <!--signup form popup-->
-<div class="login-wrapper" id="signup-content">
+<!-- signup form popup -->
+<div class="login-wrapper" id="signup-content" style="display:none;">
     <div class="login-content">
         <a href="#" class="close">x</a>
-        <h3>sign up</h3>
+        <h3>Sign Up</h3>
         <form method="post" action="{% url 'save_user' %}" enctype="multipart/form-data">
-			{% csrf_token %}
+            {% csrf_token %}
             <div class="row">
                 <label for="username-2">
                     Username:
-                    <input type="text" name="username" id="username-2" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$"
+                    <input type="text" name="username" id="username-2"
+                           pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$"
                            required="required"/>
                 </label>
             </div>
 
             <div class="row">
                 <label for="email-2">
-                    your email:
-                    <input type="password" name="email" id="email-2" placeholder=""
-                           pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                    Your email:
+                    <input type="email" name="email" id="email-2"
                            required="required"/>
                 </label>
             </div>
+
             <div class="row">
                 <label for="password-2">
                     Password:
-                    <input type="password" name="password" id="password-2" placeholder=""
+                    <input type="password" name="password" id="password-2"
                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                            required="required"/>
                 </label>
             </div>
+
             <div class="row">
                 <label for="repassword-2">
-                    re-type Password:
-                    <input type="password" name="password" id="repassword-2" placeholder=""
+                    Re-type Password:
+                    <input type="password" name="repassword" id="repassword-2"
                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                            required="required"/>
                 </label>
             </div>
+
             <div class="row">
-                <button type="submit">sign up</button>
+                <button type="submit">Sign Up</button>
             </div>
         </form>
     </div>
 </div>
-<!--end of signup form popup-->
-
+<!-- end of signup form popup -->
 <!-- BEGIN | Header -->
 <header class="ht-header">
     <div class="container">
@@ -226,8 +234,8 @@
                         <!--							</ul>-->
                     </li>
                     <li><a href="#">Help</a></li>
-                    <li class="loginLink"><a href="#">LOG In</a></li>
-                    <li class="btn signupLink"><a href="#">sign up</a></li>
+                    <li class="loginLink"><a href="#login-content" class="login-trigger">Login</a></li>
+                    <li class="btn signupLink"><a href="#signup-content" class="signup-trigger">Sign up</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -1637,17 +1645,33 @@
 </footer>
 <!-- end of footer section-->
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-    {% if show_signup_popup %}
-        document.getElementById('signup-content').style.display = 'block';
-    {% endif %}
+    document.querySelectorAll('a[href="#login-content"]').forEach(el => {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('login-content').style.display = 'block';
+        });
+    });
+
+    document.querySelectorAll('a[href="#signup-content"]').forEach(el => {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('signup-content').style.display = 'block';
+        });
+    });
+
+    document.querySelectorAll('.close').forEach(el => {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('login-content').style.display = 'none';
+            document.getElementById('signup-content').style.display = 'none';
+        });
     });
 </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{% static 'assets/js/jquery.js' %}"></script>
 <script src="{% static 'assets/js/plugins.js' %}"></script>
 <script src="{% static 'assets/js/plugins2.js' %}"></script>
 <script src="{% static 'assets/js/custom.js' %}"></script>
 </body>
-
-
 </html>
